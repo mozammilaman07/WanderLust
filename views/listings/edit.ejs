@@ -5,16 +5,18 @@
     <h3>Edit your Listing</h3>
     <br>
     
-    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input name="listing[title]" value="<%= listing.title %>" type="text"/>
+            <input name="listing[title]" value="<%= listing.title %>" type="text" required/>
+            <div class="valid-feedback">looks good!</div>
             </div>
         
         
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea name="listing[description]"  class="form-control" >"<%= listing.description %>"</textarea>
+            <textarea name="listing[description]"  class="form-control" >"<%= listing.description %>" required</textarea>
+            <div class="valid-feedback">looks good!</div>
         </div>
         
         <div class="mb-3">
